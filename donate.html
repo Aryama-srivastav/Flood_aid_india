@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flood Aid India</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Sofadi+One&family=Spectral:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Spectral', serif;
+      background: url('background.jpg');
+      background-size: cover;
+      color: #000;
+    }
+    h2{text-align: center;
+  font-family: 'Spectral', serif;
+  color: #0077b6;
+}
+h1 {
+  font-family: 'Black Ops One', serif;
+  color: #0165b2;
+  text-align: center;
+}
+
+    .main-header {
+      width: 100%;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: transparent;
+    }
+
+    .logo {
+      height: 40px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+      font-family: 'Spectral', serif;
+    }
+
+    main {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column; 
+      padding: 100px 20px 40px;
+    }
+
+    form {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      max-width: 600px;
+    }
+
+    label {
+      font-weight: bold;
+      margin-top: 1rem;
+      display: block;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 0.6rem;
+      margin-top: 0.3rem;
+      margin-bottom: 1rem;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      width: 100%;
+      padding: 0.8rem;
+      background-color: #0077b6;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #005f87;
+    }
+
+    .main-footer {
+      background-color: #287CAB;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    .social-icons img {
+      width: 24px;
+      margin: 0 10px;
+      vertical-align: middle;
+    }
+
+    h2 {
+      font-family: 'Black Ops One', cursive;
+      color: #0165b2;
+    }
+
+    p {
+      font-size: 18px;
+      font-family: 'Spectral', serif;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 600px) {
+      .main-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="main-header">
+  <div style="display: flex; align-items: center;">
+    <img src="logo.png" class="logo" alt="Logo">
+    <span style="margin-left: 12px; font-size: 1.3em; font-weight: bold; color: black;">Flood Aid India</span>
+  </div>
+  <ul class="nav-links">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="damage-estimator.html">Damage Estimator</a></li>
+                    <li><a href="solutions.html">Solution</a></li>
+                    <li><a href="donate.html">Donate</a></li>
+                </ul>
+  </nav>
+</header>
+
+  <main>
+    <h1>Support Flood Relief Efforts
+</h1>
+<h2>Your donation help in providing food, shelter, and medical aid to flood-affected families across India. 
+</h2>
+    <form id="donationForm">
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" required>
+
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" required>
+
+      <label for="amount">Donation Amount (INR):</label>
+      <input type="number" id="amount" min="100" required>
+
+      <label for="purpose">Purpose:</label>
+      <select id="purpose">
+        <option value="relief">General Relief Fund</option>
+        <option value="food">Food Kits</option>
+        <option value="shelter">Temporary Shelter</option>
+        <option value="medical">Medical Supplies</option>
+      </select>
+
+      <button type="submit">Donate Now</button>
+    </form>
+  </main>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <p>Made with ❤️ The Geeks</p>
+    <div class="social-icons">
+      <a href="https://instagram.com"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/2048px-Instagram_icon.png" alt="Instagram"></a>
+      <a href="https://facebook.com"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQM8YREsCQE3wQa4w7QcH1iB_gU4-Jj7lxwfQ&s" alt="Facebook"></a>
+      <a href="https://x.com"><img src="https://i0.wp.com/deerfieldbeachhigh.net/wp-content/uploads/2023/09/Twitter-X-App-Icon-PNG.png?ssl=1" alt="X"></a>
+      <a href="mailto:floodaidin@gmail.com"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email"></a>
+    </div>
+    <p>All rights reserved © 2025 Flood Aid India.</p>
+  </footer>
+
+  <!-- Success Message Script -->
+  <script>
+    document.getElementById("donationForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const name = document.getElementById("name").value;
+      const amount = document.getElementById("amount").value;
+      this.innerHTML = `
+        <div style="text-align: center;">
+          <h2>Thank you, ${name}!</h2>
+          <p>Your generous donation of ₹${amount} is greatly appreciated.<br>
+          We send you blessings on behalf of millions.</p>
+        </div>`;
+    });
+  </script>
+
+</body>
+</html>

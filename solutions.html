@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flood Aid India</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Sofadi+One&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('background.jpg');
+      background-size: cover;
+      color: #fff;
+    }
+
+    .solution-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+      display: none;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      font-family: 'Sofadi One', sans-serif;
+      margin-top: 0;
+      color: #0077b6;
+    }
+
+    .card p {
+      font-family: 'Spectral', serif;
+      margin-top: 0;
+      color: #0077b6;
+    }
+
+    .card a {
+      display: inline-block;
+      margin-top: 1rem;
+      color: #0077b6;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .card a:hover {
+      text-decoration: underline;
+    }
+
+    .main-header {
+      width: 100%;
+      top: 0;
+      background: transparent;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      z-index: 1000;
+    }
+
+    .logo {
+      height: 40px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 28px;
+      background: #0078d4;
+      color: #fff;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 15px;
+      transition: background 0.2s;
+    }
+
+    .btn:hover {
+      background: #005fa3;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: black;
+      text-decoration: none;
+      font-family: 'Spectral', serif;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    .main-footer {
+      background-color: #287CAB;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 40px;
+    }
+
+    .social a {
+      color: white;
+      margin: 0 10px;
+    }
+
+    @media (max-width: 600px) {
+      .main-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+      }
+    }
+
+    .risk-selector {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    select {
+      padding: 10px;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    label {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="main-header">
+    <div style="display: flex; align-items: center;">
+      <img src="logo.png" class="logo" alt="Logo">
+      <span style="margin-left: 12px; font-size: 1.3em; font-weight: bold; color: black;">Flood Aid India</span>
+    </div>
+    <ul class="nav-links">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="damage-estimator.html">Damage Estimator</a></li>
+                    <li><a href="solutions.html">Solution</a></li>
+                    <li><a href="donate.html">Donate</a></li>
+    </ul>
+  </header>
+
+  <main>
+    <div class="risk-selector">
+      <label for="riskLevel" style="color: #005fa3; font-family: 'Spectral'; font-size: 18px;">Select Your Flood Risk Level:</label>
+      <select id="riskLevel" onchange="filterCards()">
+        <option value="all">-- Show All --</option>
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+      </select>
+    </div>
+
+    <div class="solution-grid">
+      <div class="card" data-risk="high">
+        <h3>HomeShield Insurance</h3>
+        <p>Get affordable and reliable flood coverage tailored for your region and home type.</p>
+        <a href="https://www.policybazaar.com/home-insurance/flood-insurance/" target="_blank">Learn More</a>
+      </div>
+
+      <div class="card" data-risk="high">
+        <h3>Disaster Recovery Grants</h3>
+        <p>Explore government relief schemes and apply for financial aid post-disaster.</p>
+        <a href="https://ndma.gov.in/" target="_blank">Apply Now</a>
+      </div>
+
+      <div class="card" data-risk="high">
+        <h3>Municipal Flood Maps</h3>
+        <p>Access high-risk flood zones in your city and get advice on zoning and safe construction practices.</p>
+        <a href="https://vai.bmtpc.org/flood.html#" target="_blank">Check Maps</a>
+      </div>
+
+      <div class="card" data-risk="medium">
+        <h3>Safe Shelter Locator</h3>
+        <p>Find nearby government-designated safe shelters during heavy rains or flood alerts.</p>
+        <a href="https://nidm.gov.in/PDF/pubs/NDMA/24.pdf" target="_blank">Locate Shelter</a>
+      </div>
+
+      <div class="card" data-risk="medium">
+        <h3>DIY Flood Protection Kits</h3>
+        <p>Learn how to build basic flood protection for your home using affordable materials.</p>
+        <a href="https://www.redcross.org/get-help/how-to-prepare-for-emergencies/types-of-emergencies/flood.html" target="_blank">Learn How</a>
+      </div>
+
+      <div class="card" data-risk="medium">
+        <h3>Relief NGOs Network</h3>
+        <p>Connect with verified NGOs for emergency kits, support services, and volunteer opportunities.</p>
+        <a href="https://www.rapidresponse.org.in/" target="_blank">Find NGOs</a>
+      </div>
+
+      <div class="card" data-risk="medium">
+        <h3>Community Volunteers</h3>
+        <p>Join your local disaster response group and contribute to flood relief work.</p>
+        <a href="https://www.nyks.nic.in/" target="_blank">Join Now</a>
+      </div>
+
+      <div class="card" data-risk="low">
+        <h3>Rain Gutters</h3>
+        <p>Rain Water Gutters establish clear pathways for water to reach the ground.</p>
+        <a href="https://www.euroguardhysquare.com/" target="_blank">Explore Options</a>
+      </div>
+
+      <div class="card" data-risk="low">
+        <h3>RainBlock Technologies</h3>
+        <p>Install smart barriers and flood sensors to detect rising water early and protect your assets.</p>
+        <a href="https://www.armakontrol.com/en/flood-barriers-protection-solution-equipped-with-smart-technology" target="_blank">Explore Options</a>
+      </div>
+
+      <div class="card" data-risk="low">
+        <h3>WaterGuard Paints</h3>
+        <p>Special waterproof coatings for walls, foundations, and basements to reduce seepage damage.</p>
+        <a href="https://www.asianpaints.com/products/waterproofing-solutions/all-products.html" target="_blank">View Product</a>
+      </div>
+
+      <div class="card" data-risk="high">
+        <h3>Flood-Resistant Architecture</h3>
+        <p>Design tips and material guides for building water-resilient homes and spaces.</p>
+        <a href="https://www.whereisthenorth.com/article/4-methods-to-design-flood-resistant-buildings" target="_blank">Explore Designs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="main-footer">
+    <div class="container">
+      <p>Made with ❤️ by The Geeks</p>
+      <div class="social-icons" style="display: flex; justify-content: center; gap: 20px; margin: 16px 0;">
+        <a href="https://instagram.com" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/2048px-Instagram_icon.png" alt="Instagram" width="24" height="24">
+        </a>
+        <a href="https://facebook.com" target="_blank">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQM8YREsCQE3wQa4w7QcH1iB_gU4-Jj7lxwfQ&s" alt="Facebook" width="24" height="24">
+        </a>
+        <a href="https://x.com" target="_blank">
+          <img src="https://i0.wp.com/deerfieldbeachhigh.net/wp-content/uploads/2023/09/Twitter-X-App-Icon-PNG.png?ssl=1" alt="Twitter/X" width="24" height="24">
+        </a>
+        <a href="mailto:floodaidin@gmail.com">
+          <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="Email" width="24" height="24">
+        </a>
+      </div>
+      <p>All rights reserved © 2025 Flood Aid India.</p>
+    </div>
+  </footer>
+
+  <script>
+  function filterCards() {
+    const level = document.getElementById("riskLevel").value;
+    const cards = document.querySelectorAll('.card');
+
+    cards.forEach(card => {
+      const risk = card.getAttribute('data-risk');
+      if (risk === level) {
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  }
+</script>
+
+
+</body>
+</html>

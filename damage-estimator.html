@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flood Aid India</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Sofadi+One&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+  <style>
+    body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: url('background.jpg');
+  background-size: cover;
+  color: #fff;
+  padding: auto;
+}
+
+.main-header {
+  width: 100%;
+  top: 0;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  z-index: 1000;
+}
+
+.logo {
+  height: 40px;
+}
+
+h2{text-align: center;
+  font-family: 'Spectral', serif;
+  color: #0077b6;
+}
+h1 {
+  font-family: 'Black Ops One', serif;
+  color: #0165b2;
+  text-align: center;
+}
+
+p{
+    text-align: left;
+}
+
+
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #0078d4;
+    color: #fff;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 15px;
+    transition: background 0.2s;
+}
+
+.btn:hover {
+    background: #005fa3;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: black;
+  text-decoration: none;
+  font-family: 'Spectral', serif;
+}
+
+main {
+    padding: 20px 20px 20px;
+  align-items: center;
+  justify-content: center;
+}
+.main-footer {
+  background-color: #287CAB;
+  color: white;
+  align-items:center;
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 40px;
+}
+.container {
+  padding: 0 20px;
+  text-align: center;
+  font-family: 'Spectral', serif;
+}
+.container h2 {
+  font-family: 'Black Ops One', serif;
+}
+.social a {
+  color: white;
+  margin: 0 10px;
+}
+    .form-wrapper {
+      width: 100%;
+      height: 100%;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      position: relative;
+    }
+
+    #formContent {
+      flex: 1;
+      padding: 2rem;
+    }
+
+    svg#waveSVG {
+  position: absolute;
+  bottom: 0;
+  z-index: 2;
+  width: 100%;
+  height: 50px;
+  transition: bottom 0.5s ease;
+}
+
+    label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: bold;
+      font-family: 'Spectral', serif;
+    }
+
+    select,
+    input {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.5rem;
+      font-weight: bold;
+      font-family: 'Spectral', serif;
+    }
+
+    button {
+      margin-top: 0.1rem;
+      margin-bottom: 1.5rem;
+      padding: 0.7rem 1.5rem;
+      background-color: #0077b6;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      font-family: 'Spectral', serif;
+    }
+
+    button:hover {
+      background-color: #005f87;
+    }
+    #waterFill {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 0;
+  background: #2698d1;
+  transition: height 0.5s ease;
+  z-index: 0;
+}
+
+svg#waveSVG {
+  position: absolute;
+  width: 100%;
+  height: 80px;
+  transition: bottom 0.5s ease;
+  z-index: 1;
+}
+    svg {
+  width: 100%;
+  display: block;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+    use {
+      animation: move-forever 2s linear infinite;
+    }
+
+    use:nth-child(2) {
+      animation-duration: 2.5s;
+      animation-delay: -1.5s;
+    }
+
+    use:nth-child(1) {
+      animation-duration: 5s;
+    }
+
+    @keyframes move-forever {
+      0% { transform: translate(-2px, 0); }
+      100% { transform: translate(0px, 0); }
+    }
+  </style>
+</head>
+<body>
+    <header class="main-header">
+  <div style="display: flex; align-items: center;">
+    <img src="logo.png" class="logo" alt="Logo">
+    <span style="margin-left: 12px; font-size: 1.3em; font-weight: bold; color: black;">Flood Aid India</span>
+  </div>
+  <ul class="nav-links">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="damage-estimator.html">Damage Estimator</a></li>
+                    <li><a href="solutions.html">Solution</a></li>
+                    <li><a href="donate.html">Donate</a></li>
+                </ul>
+  </nav>
+</header>
+<h1>Flood Damage Estimator
+</h1>
+<h2>This tool predicts flood damage risk based on your nearest flood affected location, house type, and structure age
+</h2>
+
+  <main> 
+    <div class="form-wrapper">
+    <div id="formContent">
+      <form id="damageEstimator">
+        <label for="state">Select State:</label>
+        <select id="state" name="state">
+          <option value="">-- Select State --</option>
+        </select>
+
+        <div id="cityContainer" style="display:none;">
+          <label for="city">Select Nearest City:</label>
+          <select id="city" name="city">
+            <option value="">-- Select City --</option>
+          </select>
+        </div>
+
+        <label for="houseType">Select House Type:</label>
+        <select id="houseType" name="houseType">
+          <option value="">-- Select House Type --</option>
+          <option value="kaccha">Mud structure</option>
+          <option value="brick">Brick structure</option>
+          <option value="concrete">Concrete structure</option>
+        </select>
+
+        <div id="yearContainer" style="display:none;">
+          <label for="yearCategory">Year of Construction:</label>
+          <select id="year">
+            <option value="">-- Select Year --</option>
+          </select>
+        </div>
+        <br><br>
+        <div style="display: flex; justify-content: center;">
+          <button type="submit">Estimate Damage</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="svg-container" style="margin-bottom:1px;">
+      <svg id="waveSVG" viewBox="0 0 2 1" preserveAspectRatio="none">
+      <defs>
+        <path id="w" d="m0 1v-.5 q.5.5 1 0 t1 0 1 0 1 0 v.5z"/>
+      </defs>
+      <g id="waveGroup">
+        <use href="#w" y="0.0" fill="#91d1f7" />
+        <use href="#w" y="0.05" fill="#56c0f0" />
+        <use href="#w" y="0.10" fill="#2698d1" />
+      </g>
+      </svg>
+    </div>
+    <div id="waterFill" style=" position: absolute; bottom: 0; width: 100%; height: 0; background: #2698d1; transition: height 0.5s ease; z-index: 0;"></div>
+  </div>
+  </main>
+
+  <footer class="main-footer">
+  <div class="container" style="text-align: center;">
+    <p style="text-align: center;">Made with ❤️ The Geeks</p>
+
+    <div class="social-icons" style="display: flex; justify-content: center; gap: 20px; margin: 16px 0;">
+      <a href="https://instagram.com" target="_blank" style="display: inline-block;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/2048px-Instagram_icon.png" alt="Instagram" style="vertical-align: middle;" width="24" height="24">
+      </a>
+      <a href="https://facebook.com" target="_blank" style="display: inline-block;">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQM8YREsCQE3wQa4w7QcH1iB_gU4-Jj7lxwfQ&s" alt="Facebook" style="vertical-align: middle;" width="24" height="24">
+      </a>
+      <a href="https://x.com" target="_blank" style="display: inline-block;">
+        <img src="https://i0.wp.com/deerfieldbeachhigh.net/wp-content/uploads/2023/09/Twitter-X-App-Icon-PNG.png?ssl=1" alt="Website" style="vertical-align: middle;" width="24" height="24">
+      </a>
+      <a href="mailto:floodaidin@gmail.com" style="display: inline-block;">
+        <img src="data:image/png;base64,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" alt="Email" style="vertical-align: middle;" width="24" height="24">
+      </a>
+    </div>
+
+    <p style="text-align: center;">All rights reserved © 2025 Flood Aid India.</p>
+  </div>
+</footer>
+</body>
+
+<script>
+const stateSelect = document.getElementById("state");
+const citySelect = document.getElementById("city");
+const houseType = document.getElementById("houseType");
+const yearSelect = document.getElementById("year");
+const yearContainer = document.getElementById("yearContainer");
+
+const stateCityMap = {
+  "Andhra Pradesh": ["Tirupati","Guntur","Krishna","Kurnool","Visakhapatnam"],
+  "Andhra Pradesh": ["Namsai","Lower Dibang Valley","East Siang","Changlang","Lohit"],
+  "Assam": ["Lakhimpur","Golaghat","Sivasagar","Biswanath","Darrang","Baksa"],
+  "Bihar": ["Madhubani","Mujjafarpur","Patna","Chhapra","Siwan","Nalanda","Bhojpur","Gaya","Rohtas"],
+  "Chhattisgarh": ["Bemeta","Bilaspur","Raipur","Durg","Balod"],
+  "Delhi": ["North Delhi","South East Delhi","East Delhi","Central Delhi"],
+  "Gujrat": ["Ahmedabad","Surendranagar","Bhavnagar","Kachchh","Surat","Gandhinagar"],
+  "Haryana": ["Kaithal","Kurukshetra","Sonipat","Ambala","Panipat","Yamunanagar"],
+  "Jammu and Kashmir": ["Badgam","Baramulla","Pulwama","Srinagar","Anantnag","Kupwara"],
+  "Jharkhand": ["Sahibganj","Pakur","Raipur"],
+  "Karnataka": ["Belgaum","Bagalkot","Mysore","Uttar Kannada","Dharwad","Chamrajnagar","Dakshina Kannada","Bangalore"],
+  "Kerala": ["Kottayam","Alappuzha","Pathanamthitta","Malappuram","Kollam","Wayanad"],
+  "Madhya Pradesh": ["Jabalpur","Hoshangabad","Rewa","Bhind","Shivpuri","Sagar","Chhattarpur","Bhopal"],
+  "Maharashtra": ["Kolhapur","Bhandara","Sangili","Nanded","Nashik","Amravati","Pune","Mumbai"],
+  "Manipur":["Imphal","Bishnupur","Kangpokpi","Senapati"],
+  "Meghalaya":["West Garo Hills","South West Garo Hills"],
+  "Odisha":["Baleshwar","Puri","Cuttack","Khordha","Nayagarh","Deogarh","Sambalpur","Bhubneshwar"],
+  "Punjab":["Patiala","Jalandhar","Ludhiana","Firozpur","Amritsar"],
+  "Rajasthan":["Barmer","Kota","Karauli","Jodhpur","Jaisalmer","Sawai Madhopur"],
+  "Tamil Nadu":["Kanchipuram","Thanjavur","Sivaganga","Madurai","Chennai","Kanyakumari"],
+  "Telangana":["Mulugu","Wanaparthy","Nalgonda","Nagarkurnool","Adilabad"],
+  "Tripura":["Gomati","Sipahijala","West Tripura","North Tripura"],
+  "Uttar Pradesh":["Gorakhpur","Ballia","Unnao","Allahabad","Bareilly","Mirzapur","Kushinagar","Jaunpur","Agra","Meerut","Mathura","Kanpur","Varansi","Lucknow","Jhansi"],
+  "Uttarakhand":["Haridwar","Udham Singh Nagar"],
+  "West Bengal":["Murshidabad","Hugli","Dinajpur","Haora","Kolkata"],
+}
+const cityFloodRisk = { "Tirupati":1,"Guntur":0.8,"Krishna":0.6,"Kurnool":0.3,"Visakhapatnam":0.1,
+"Namsai":1,"Lower Dibang Valley":0.9,"East Siang":0.8,"Changlang":0.3,"Lohit":0.2,
+"Lakhimpur":1,"Golaghat":1,"Sivasagar":0.9,"Biswanath":0.9,"Darrang":0.8,"Baksa":0.8,
+"Madhubani":1,"Mujjafarpur":1,"Patna":0.9,"Chhapra":0.9,"Siwan":0.7,"Nalanda":0.7,"Bhojpur":0.6,"Gaya":0.6,"Rohtas":0.6,
+"Bemeta":1,"Bilaspur":0.7,"Raipur":0.7,"Durg":0.5,"Balod":0.2,
+"North Delhi":1,"South East Delhi":0.9,"East Delhi":0.8,"Central Delhi":0.5,
+"Ahmedabad":1,"Surendranagar":0.9,"Bhavnagar":0.8,"Kachchh":0.6,"Surat":0.3,"Gandhinagar":0.2,
+"Kaithal":1,"Kurukshetra":1,"Sonipat":0.8,"Ambala":0.6,"Panipat":0.5,"Yamunanagar":0.3,
+"Badgam":1,"Baramulla":1,"Pulwama":0.9,"Srinagar":0.7,"Anantnag":0.6,"Kupwara":0.4,
+"Sahibganj":1,"Pakur":0.4,"Raipur":0.1,
+"Belgaum":1,"Bagalkot":1,"Mysore":0.9,"Uttar Kannada":0.8,"Dharwad":0.6,"Chamrajnagar":0.5,"Dakshina Kannada":0.4,"Bangalore":0.2,
+"Kottayam":1,"Alappuzha":0.9,"Pathanamthitta":0.7,"Malappuram":0.6,"Kollam":0.5,"Wayanad":0.4,
+"Jabalpur":1,"Hoshangabad":1,"Rewa":0.9,"Bhind":0.7,"Shivpuri":0.6,"Sagar":0.5,"Chhattarpur":0.4,"Bhopal":0.3,
+"Kolhapur":1,"Bhandara":1,"Sangili":0.9,"Nanded":0.7,"Nashik":0.5,"Amravati":0.4,"Pune":0.3,"Mumbai":0.2,
+"Imphal":1,"Bishnupur":1,"Kangpokpi":0.8,"Senapati":0.5,
+"West Garo Hills":1,"South West Garo Hills":0.6,
+"Baleshwar":1,"Puri":1,"Cuttack":0.9,"Khordha":0.8,"Nayagarh":0.8,"Deogarh":0.5,"Sambalpur":0.3,"Bhubneshwar":0.1,
+"Patiala":1,"Jalandhar":0.9,"Ludhiana":0.7,"Firozpur":0.5,"Amritsar":0.2,
+"Barmer":1,"Kota":0.8,"Karauli":0.5,"Jodhpur":0.4,"Jaisalmer":0.3,"Sawai Madhopur":0.2,
+"Kanchipuram":1,"Thanjavur":0.9,"Sivaganga":0.8,"Madurai":0.8,"Chennai":0.5,"Kanyakumari":0.3,
+"Mulugu":1,"Wanaparthy":0.7,"Nalgonda":0.5,"Nagarkurnool":0.4,"Adilabad":0.3,
+"Gomati":0.8,"Sipahijala":0.5,"West Tripura":0.3,"North Tripura":0.2,
+"Gorakhpur":1,"Ballia":1,"Unnao":0.9,"Allahabad":0.9,"Bareilly":0.8,"Mirzapur":0.7,"Kushinagar":0.7,"Jaunpur":0.6,"Agra":0.5,"Meerut":0.4,"Mathura":0.3,"Kanpur":0.3,"Varansi":0.2,"Lucknow":0.1,"Jhansi":0.1,
+"Haridwar":0.7,"Udham Singh Nagar":0.5,
+"Murshidabad":1,"Hugli":0.9,"Dinajpur":0.7,"Haora":0.6,"Kolkata":0.4
+};
+
+Object.keys(stateCityMap).forEach(state => {
+  const option = document.createElement("option");
+  option.value = state;
+  option.textContent = state;
+  stateSelect.appendChild(option);
+});
+
+stateSelect.addEventListener("change", () => {
+  const selectedState = stateSelect.value;
+  citySelect.innerHTML = `<option value="">-- Select City --</option>`;
+  if (selectedState) {
+    stateCityMap[selectedState].forEach(city => {
+      const opt = document.createElement("option");
+      opt.value = city;
+      opt.textContent = city;
+      citySelect.appendChild(opt);
+    });
+    document.getElementById("cityContainer").style.display = "block";
+  } else {
+    document.getElementById("cityContainer").style.display = "none";
+  }
+});
+
+houseType.addEventListener("change", () => {
+  if (houseType.value === "brick") {
+    yearContainer.style.display = "block";
+    yearSelect.innerHTML = `
+      <option value="">-- Select Age Range --</option>
+      <option value="50">Less than 50 years</option>
+      <option value="75">50 to 100 years</option>
+      <option value="100">More than 100 years</option>
+    `;
+  } else if (houseType.value === "concrete") {
+    yearContainer.style.display = "block";
+    yearSelect.innerHTML = `
+      <option value="">-- Select Age Range --</option>
+      <option value="90">Less than 100 years</option>
+      <option value="110">More than 100 years</option>
+    `;
+  } else {
+    yearContainer.style.display = "none";
+    yearSelect.innerHTML = "";
+  }
+});
+
+function getYearRisk(category) {
+  if (category === "50") return 50;
+  if (category === "75") return 75;
+  if (category === "100") return 95;
+  if (category === "90") return 50;
+  if (category === "110") return 95;
+  return 0;
+}
+
+function getRiskColor(score) {
+  if (score < 30) return "#38b000";
+  if (score < 60) return "#f9c74f";
+  return "#d62828";
+}
+
+document.getElementById("damageEstimator").addEventListener("submit", function (e) {
+  e.preventDefault();
+  const selectedCity = citySelect.value;
+  const selectedYearCategory = yearSelect.value;
+  const selectedHouse = houseType.value;
+
+  if (!stateSelect.value || !selectedCity || !selectedHouse ||
+    ((selectedHouse === "brick" || selectedHouse === "concrete") && !selectedYearCategory)) {
+    alert("Please fill in all required fields.");
+    return;
+  }
+
+  let score = 0;
+  const cityRisk = cityFloodRisk[selectedCity] || 0;
+
+  if (selectedHouse === "brick" || selectedHouse === "concrete") {
+    score = cityRisk * getYearRisk(selectedYearCategory);
+  } else {
+    score = cityRisk * 95;
+  }
+
+  score = Math.min(score, 100);
+
+  document.getElementById("formContent").innerHTML = `
+  <div class="result-wrapper" style="position: relative; z-index: 3; text-align: center; padding: 2rem;">
+    <h2 style="margin-bottom: 10px; font-family: 'Spectral'; color:${getRiskColor(score)};">
+      Estimated Flood Damage Risk
+    </h2><br>
+    <div style="
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-family: 'Spectral', serif;
+      font-weight: bold;
+      background: ${getRiskColor(score)};
+      z-index: 3;
+      margin: 0 auto 10px auto;
+    ">${score.toFixed(0)}%</div>
+    <a href="solutions.html"><button style=" padding: 0.6rem 1.5rem;
+      background-color: #0077b6;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 3;
+      font-family: 'Spectral', serif;" id="sol">View Solutions</button></a>
+  </div>
+`;
+
+
+  const waveGroup = document.querySelectorAll("#waveGroup use");
+  const baseY = 0.5 - (score / 200);
+  waveGroup.forEach((wave, i) => {
+    wave.setAttribute("y", (baseY + i * 0.1).toFixed(2));
+  });
+
+  const svg = document.getElementById("waveSVG");
+  const svgContainer = document.querySelector(".svg-container");
+  const newHeight = 50 + score;
+  const waterFill = document.getElementById("waterFill");
+  waterFill.style.height = `${score}%`;
+  const waveSVG = document.getElementById("waveSVG");
+waveSVG.style.bottom = `${score}%`;
+
+});
+</script>
+</html>
